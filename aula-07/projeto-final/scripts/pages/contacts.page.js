@@ -23,7 +23,7 @@ const eventos = () => {
 }
 
 export const Contacts = () => {
-    window.location.href = "#contacts"
+    window.location.href = '/#contacts'
 
     const componenteHeader = Header()
     root.append(componenteHeader)

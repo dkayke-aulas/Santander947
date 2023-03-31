@@ -22,24 +22,22 @@ function redirectPage() {
     const root = document.querySelector('#root')
     const route = ROUTER[window.location.hash] || ROUTER['#404']
     const token = sessionStorage.getItem('@token')
-
-    if(route.private && isTokenExpired(token)) {
-        window.location.href = '#login'
-        return
-    }
     
     if(route.private !== undefined) {
-        const ehPrivadoNaoLogado = route.private === true && !sessionStorage.getItem('@token')
+        const ehPrivadoNaoLogado = route.private === true && !token
+        const ehPrivadoTokenExpirado = route.private === true && isTokenExpired(token)
     
-        if(ehPrivadoNaoLogado) {
-            window.location.href = '#login'
+        if(ehPrivadoNaoLogado || ehPrivadoTokenExpirado) {
+            sessionStorage.removeItem('@token')
+            sessionStorage.removeItem('@user')
+            window.location.href = '/#login'
             return
         }
     
-        const ehPublicoLogado = route.private === false && sessionStorage.getItem('@token')
+        const ehPublicoLogado = route.private === false && token
     
         if(ehPublicoLogado) {
-            window.location.href = '#contacts'
+            window.location.href = '/#contacts'
             return
         }
     }
@@ -52,7 +50,7 @@ function redirectPage() {
 window.addEventListener('load', () => {
 
     if(!window.location.hash) {
-        window.location.href = "#login"
+        window.location.href = '/#login'
     }
 
     redirectPage()

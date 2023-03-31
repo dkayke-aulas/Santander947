@@ -7,6 +7,6 @@ export const NotFound = () => {
         <a href="/#login">Ir para o início</a>
     `
 
-    window.location.hash = "#404"
+    window.location.href = '/#404'
     return notFound
 }

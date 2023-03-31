@@ -23,7 +23,7 @@ const eventos = () => {
                     }, 3000)
                 }
                 else if(resposta.status === 200) {
-                    window.location.href = '#login'
+                    window.location.href = '/#login'
                 }
             })
             .catch((erro) => {

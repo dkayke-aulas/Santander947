@@ -16,7 +16,7 @@ const eventos = () => {
                 const { token, ...dadosUsuario } = data
                 window.sessionStorage.setItem('@token', token)
                 window.sessionStorage.setItem('@user', JSON.stringify(dadosUsuario))
-                window.location.href = '#contacts'
+                window.location.href = '/#contacts'
 
             })
             .catch((erro) => {
