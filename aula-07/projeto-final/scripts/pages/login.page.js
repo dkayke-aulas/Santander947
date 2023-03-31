@@ -1,4 +1,5 @@
 import { loginService } from "../services/auth.service.js"
+import { Header } from "../components/header.component.js"
 
 const login = document.createElement('form')
 login.setAttribute('id', 'p-login')
@@ -11,8 +12,12 @@ const eventos = () => {
         const dadosDoFormulario = Object.fromEntries(fd)
 
         loginService(dadosDoFormulario)
-            .then(({data}) => {
-                console.log(data.nome)
+            .then(({ data }) => {
+                const { token, ...dadosUsuario } = data
+                window.sessionStorage.setItem('@token', token)
+                window.sessionStorage.setItem('@user', JSON.stringify(dadosUsuario))
+                window.location.href = '#contacts'
+
             })
             .catch((erro) => {
                 console.log(erro)
@@ -21,6 +26,11 @@ const eventos = () => {
 }
 
 export const Login = () => {
+
+    const root = document.querySelector('#root')
+    const componenteHeader = Header()
+    root.append(componenteHeader)
+
     login.innerHTML = `
         <label for="email">E-mail</label>
         <input type="email" name="email">
@@ -38,7 +48,7 @@ export const Login = () => {
         <br>
 
         <p>
-            Não tem conta? <a href="#signup">crie aqui</a>
+            Não tem conta? <a href="/#signup">crie aqui</a>
         </p>
     `
 

@@ -1,4 +1,6 @@
 @import url(./styles/pages/login.page.css);
+@import url(./styles/components/header.component.css);
+@import url(./styles/components/card-contact-component.css);
 
 body {
     margin: 0;
@@ -10,6 +12,12 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 input:not(input[type='radio']):not(input[type='checkbox']), button {
@@ -25,4 +33,10 @@ input[type='radio'], input[type='checkbox'] {
 label {
     font-weight: 500;
     color: blueviolet;
+}
+
+#cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
