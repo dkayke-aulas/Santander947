@@ -14,15 +14,36 @@ body {
     box-sizing: border-box;
 }
 
-form {
+form, fieldset {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 10px;
 }
 
-input:not(input[type='radio']):not(input[type='checkbox']), button {
+form {
+    padding-bottom: 10px;
+}
+
+button {
+    background-color: blueviolet;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #914fce;
+}
+
+textarea, input:not(input[type='radio']):not(input[type='checkbox']), button {
     min-height: 40px;
     padding: 5px 10px;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
 }
 
 input[type='radio'], input[type='checkbox'] {

@@ -1,5 +1,4 @@
 import { loginService } from "../services/auth.service.js"
-import { Header } from "../components/header.component.js"
 
 const login = document.createElement('form')
 login.setAttribute('id', 'p-login')
@@ -26,11 +25,6 @@ const eventos = () => {
 }
 
 export const Login = () => {
-
-    const root = document.querySelector('#root')
-    const componenteHeader = Header()
-    root.append(componenteHeader)
-
     login.innerHTML = `
         <label for="email">E-mail</label>
         <input type="email" name="email">

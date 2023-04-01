@@ -35,6 +35,9 @@ const eventos = () => {
 
 export const Signup = () => {
     signup.innerHTML = `
+        <a href="/#login">Já possui conta? Entre aqui!</a>
+        <br>
+        
         <label for="nome">Nome completo</label>
         <input type="nome" name="nome" required>
 
