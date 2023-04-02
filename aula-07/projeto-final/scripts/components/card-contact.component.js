@@ -19,7 +19,8 @@ const eventos = (contato) => {
         if(confirmacao === true) {
             deleteContactService(contato.id)
                 .then(({data}) => {
-                    window.alert(data)
+                    window.alert(data?.msg)
+                    window.location.reload()
                 })
                 .catch((erro) => {
                     console.error(erro)
