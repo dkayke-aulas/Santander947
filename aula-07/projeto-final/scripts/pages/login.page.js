@@ -13,7 +13,7 @@ const eventos = () => {
         loginService(dadosDoFormulario)
             .then(({ data }) => {
                 const { token, ...dadosUsuario } = data
-                window.sessionStorage.setItem('@token', token)
+                window.sessionStorage.setItem('@token', `Bearer ${token}`)
                 window.sessionStorage.setItem('@user', JSON.stringify(dadosUsuario))
                 window.location.href = '/#contacts'
 
