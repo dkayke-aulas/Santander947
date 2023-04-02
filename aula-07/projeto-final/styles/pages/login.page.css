@@ -8,6 +8,8 @@
     padding: 0;
     margin: 0;
     border: 0;
+    flex-direction: row;
+    justify-content: start;
 }
 
 #p-login input[type='radio'], input[type='checkbox'] {

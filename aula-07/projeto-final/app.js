@@ -32,7 +32,7 @@ function redirectPage() {
     const ehTokenExpirado = isTokenExpired(token)
     const ehRotaPrivada = route.private === true
     const ehRotaPublica = route.private === false
-    const ehRotaPublicaPrivada = route.private !== undefined
+    const ehRotaPublicaPrivada = route.private === undefined
     
     if(!ehRotaPublicaPrivada) {    
         if(ehRotaPrivada && ehTokenExpirado) {
