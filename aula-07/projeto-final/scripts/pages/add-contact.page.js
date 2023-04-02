@@ -65,7 +65,7 @@ export const AddContact = () => {
     addContact.innerHTML = `
         <div id="cabecalho">
             <h1>Novo contato</h1>
-            <a href="/#contacts">Voltar para contatos</a>
+            <a href="/?#contacts">Voltar para contatos</a>
         </div>
 
         <fieldset>
