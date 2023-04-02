@@ -2,7 +2,7 @@ const urlBase = "http://localhost:5000/v1/"
 
 
 const headers = new Headers()
-headers.append('content-type', 'application/json')
+headers.set('content-type', 'application/json')
 
 /*
     dados = {
